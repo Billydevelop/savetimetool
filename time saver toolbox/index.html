@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Saver Toolbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 사이드 메뉴 -->
+    <aside id="sidebar">
+      <h1>Time Saver Toolbox</h1>
+      <nav>
+        <ul>
+          <li><button onclick="navigate('textConverter')"><i class="icon">&#128214;</i> Text Converter</button></li>
+          <li><button onclick="navigate('unitConverter')"><i class="icon">&#128202;</i> Unit Converter</button></li>
+          <li><button onclick="navigate('dateCalculator')"><i class="icon">&#128197;</i> Date/Time Calculator</button></li>
+          <li><button onclick="navigate('urlGenerator')"><i class="icon">&#128279;</i> URL & QR Generator</button></li>
+          <li><button onclick="navigate('dataCleanup')"><i class="icon">&#128221;</i> Data Cleanup Tool</button></li>
+          <li><button onclick="navigate('whiteNoise')"><i class="icon">&#127925;</i> White Noise Generator</button></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 메인 콘텐츠 -->
+    <main id="content">
+        <section id="textConverter" class="page hidden">
+            <div class="card">
+              <h3>Text Converter</h3>
+              <textarea id="text-input" placeholder="Enter your text here..."></textarea>
+              <div>
+                <button onclick="convertToUpper()">Uppercase</button>
+                <button onclick="convertToLower()">Lowercase</button>
+                <button onclick="removeSpaces()">Remove Spaces</button>
+              </div>
+              <textarea id="text-output" readonly placeholder="Result will appear here..."></textarea>
+            </div>
+          </section>
+          
+
+      <section id="unitConverter" class="page hidden">
+        <h2>Unit Converter</h2>
+        <p>Convert between various units like kilometers, miles, kilograms, and pounds.</p>
+        <input type="number" id="unit-input" placeholder="Enter value">
+        <select id="unit-type">
+          <option value="km-to-miles">Kilometers to Miles</option>
+          <option value="miles-to-km">Miles to Kilometers</option>
+          <option value="kg-to-lbs">Kilograms to Pounds</option>
+          <option value="lbs-to-kg">Pounds to Kilograms</option>
+        </select>
+        <button onclick="convertUnit()">Convert</button>
+        <p id="unit-output"></p>
+      </section>
+
+      <section id="dateCalculator" class="page hidden">
+        <h2>Date/Time Calculator</h2>
+        <p>Calculate the difference between two dates in days.</p>
+        <input type="date" id="start-date">
+        <input type="date" id="end-date">
+        <button onclick="calculateDays()">Calculate Days</button>
+        <p id="date-output"></p>
+      </section>
+
+      <section id="urlGenerator" class="page hidden">
+        <h2>URL & QR Code Generator</h2>
+        <p>Generate a QR code from a URL.</p>
+        <input type="text" id="url-input" placeholder="Enter URL">
+        <button onclick="generateQRCode()">Generate QR Code</button>
+        <div id="qr-code-output"></div>
+      </section>
+
+      <section id="dataCleanup" class="page hidden">
+        <h2>Data Cleanup Tool</h2>
+        <p>Remove duplicates or sort your data.</p>
+        <textarea id="data-input" placeholder="Paste your data here..."></textarea>
+        <button onclick="removeDuplicates()">Remove Duplicates</button>
+        <button onclick="sortData()">Sort Data</button>
+        <textarea id="data-output" readonly placeholder="Result will appear here..."></textarea>
+      </section>
+
+      <section id="whiteNoise" class="page hidden">
+        <h2>White Noise Generator</h2>
+        <p>Play calming sounds like rain or forest ambiance.</p>
+        <button onclick="playNoise('rain')">Play Rain Sound</button>
+        <button onclick="playNoise('forest')">Play Forest Sound</button>
+        <button onclick="stopNoise()">Stop</button>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
